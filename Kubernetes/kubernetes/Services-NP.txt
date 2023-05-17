@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todoapp-svc-np
+spec:
+  selector:
+    app: todoapp
+  type: NodePort   
+  ports:
+    - port: 3000
+      nodePort: 30000
+      targetPort: 3000

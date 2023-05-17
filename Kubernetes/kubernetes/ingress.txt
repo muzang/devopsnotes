@@ -1,0 +1,87 @@
+Enable ingress in minikube
+
+minikube addons enable ingress
+
+Pod-a and Service a
+-----------------------
+kind: Pod
+apiVersion: v1
+metadata:
+  name: apple-app
+  labels:
+    app: apple
+spec:
+  containers:
+    - name: apple-app
+      image: hashicorp/http-echo
+      args:
+        - "-text=Welocome to apple APP"
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: apple-service
+spec:
+  selector:
+    app: apple
+  ports:
+    - port: 5678
+----------------------------------
+Pod B and Service B
+-------------------------
+kind: Pod
+apiVersion: v1
+metadata:
+  name: banana-app
+  labels:
+    app: banana
+spec:
+  containers:
+    - name: banana-app
+      image: hashicorp/http-echo
+      args:
+        - "-text=Welcome to banana APP"
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: banana-service
+spec:
+  selector:
+    app: banana
+  ports:
+    - port: 5678
+--------------------------------------------------
+ingress creation
+-------------------
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: example-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /apple
+          backend:
+            serviceName: apple-service
+            servicePort: 5678
+        - path: /banana
+          backend:
+            serviceName: banana-service
+            servicePort: 5678
+---------------------------------------------
+verify ingress
+-------------------------
+$ curl -kL http://localhost/apple
+apple
+
+$ curl -kL http://localhost/banana
+banana
+

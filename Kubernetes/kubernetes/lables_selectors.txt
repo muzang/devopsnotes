@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: todoapp
+  labels:
+    app: todoapp
+    env: Dev
+    release: Stable
+spec:
+  containers:
+  - name: todoapp1
+    image: devopscloudcamp/todo1:todo1
+    ports:
+      - containerPort: 3000
+---------------------------------------------------
+
+kubectl get pods --show-labels
+kubectl get po -l env=dev
+kubectl get po -l env
+kubectl get po -l "!env"

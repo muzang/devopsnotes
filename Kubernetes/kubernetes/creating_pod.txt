@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demoapp
+spec:
+  containers:
+  - name: demoapp
+    image: devopscloudcamp/centdcc
+    ports:
+      - containerPort: 80
+_______________________________________
+Commands
+--------
+
+Create Pod using Spec file
+-------------------------------
+kubectl create -f <filename>.yml
+
+launch pod inside namespace
+-------------------------------
+kubectl apply -f pod.yaml --namespace=<namespace_name>
+
+checking pods in particular namespace
+-------------------------------------
+kubectl get pods --namespace=<namespace_name>
+
+checking pods in all namespace
+--------------------------------
+kubectl get pods --all-namespaces 
+
+
+Creating Pods using command
+----------------------------
+kubectl run <podname> --image=<imagename>
+
+kubectl get pods
+kubectl get pods -o wide
+
+kubectl describe pods <podname>
+
+kubectl get po <podname> -o wide
+
+get logs
+---------
+kubectl logs <podname>
+
+login pods
+-----------
+kubectl exec -it <pod name> -- sh
+kubectl exec -it demoapp-pod -- sh

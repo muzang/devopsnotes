@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: demoapp-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demoapp
+  template:
+    metadata:
+      name: demoapp-pod
+      labels:
+        app: demoapp
+    spec:
+      containers:
+      - name: demoapp-container
+        image: learntechpuzz/demoapp
+        ports:
+          - containerPort: 80

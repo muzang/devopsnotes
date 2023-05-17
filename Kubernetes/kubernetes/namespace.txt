@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demo-ns
+
+----------------------------------------
+kubectl create -f <namespace>.yml
+
+Create without Spec:
+-----------------------
+
+kubectl create namespace sparcstonz-ns
+
+Check namespaces:
+------------------
+
+kubectl get namespaces
+
+kubect get ns
