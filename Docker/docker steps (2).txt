@@ -1,0 +1,48 @@
+Installation
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+apt-cache policy docker-ce
+sudo apt-get install -y docker-ce
+docker --version
+systemctl status docker
+
+Docker container list
+----------------------
+docker ps
+
+docker ps -a   ( including stopped containers)
+
+
+Apache container launch
+-------------------------
+sudo docker run -dit --name <containerName> -p <dest port>:<original Port> -v /<vol dir Name>:/usr/local/apache2/htdocs/ <image of docker hub in remte>
+
+Launching container with Volume :
+------------------------------
+
+sudo docker run -dit --name TestWeb -p 8081:80 -v /web:/usr/local/apache2/htdocs/ httpd:2.4
+
+Launching container without Volume :
+-----------------------------------
+
+sudo docker rn -dit --name democent -p 80801:80 devopscloudcamp/centdcc
+
+Jenkins container launch
+------------------------
+
+docker run --name jenkins -p 8082:8080 -v /jenkins ticketfly/jenkins-example-gradle-build > jenkins.txt
+
+stoping and starting container
+---------------------------------
+
+docker stop < container id>
+docker start < container Id>
+
+login container:
+---------------
+docker exec -it <container ID> bash
+
+
+

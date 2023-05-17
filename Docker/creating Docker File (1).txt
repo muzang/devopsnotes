@@ -1,0 +1,62 @@
+vi Dockerfile
+
+#This is a sample Image 
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install apache2 -y
+RUN apt-get install apache2-utils -y
+RUN apt-get clean
+COPY index.html /var/www/html/
+EXPOSE 80
+CMD [“apache2ctl”, “-D”, “FOREGROUND”]
+
+
+------------------------
+APACHE CONTAINER IN UBUNTU
+
+FROM ubuntu
+MAINTAINER gkaravindkumar@gmail.com
+FROM ubuntu
+ENV TZ=America/Los_Angeles
+RUN ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime
+RUN echo "$TZ" > /etc/timezone
+RUN apt-get update
+RUN apt-get install -y tzdata
+RUN apt-get update
+RUN apt-get install apache2 -y
+RUN apt-get install apache2-utils -y
+RUN apt-get clean
+COPY index.html /var/www/html/
+EXPOSE 80
+CMD ["apachectl", "-D", "FOREGROUND"]
+------------------------------------------------------------------------
+
+RUN apt-get update
+RUN apt-get install apache2 -y
+COPY index.html /var/www/html/
+CMD [“echo”,”Image created”]
+
+
+
+
+
+docker build  -t ImageName:TagName dir
+
+docker build -t dccdemo 
+
+
+upload in docker HUB
+
+ docker tag <local image name> <onlinerepo>/<appname>
+docker login
+
+docker push <onlinerepo>/<appname>.
+
+
+-t − is to mention a tag to the image
+
+ImageName − This is the name you want to give to your image.
+
+TagName − This is the tag you want to give to your image.
+
+Dir − The directory where the Docker File is present.
