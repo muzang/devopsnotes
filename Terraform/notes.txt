@@ -1,0 +1,189 @@
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = "AK74M"
+  secret_key = "kfu79FP8EqHBap3"
+}
+
+# Create AWS Instance
+
+resource "aws_instance" "tf_instance1" {
+  ami           = "ami-09f7fbc41963e146f"
+  instance_type = "t2.micro"
+  key_name      = "loksaieta123"
+
+  tags = {
+    Name = "Terraform-server1"
+  }
+}
+
+# Create AWS Instance
+
+resource "aws_instanceeee" "app_server2" {
+  ami           = "ami-09f7fbc41963e146f"
+  instance_type = "t2.micro"
+  key_name      = "loksaieta123"
+
+  tags = {
+    Name = "TerraformDemoServer2"
+  }
+}
+
+
+
++ => Add new resource
+~ => update any existing resource
+- => Delete any existing resource
+
+
+
+
+
+
+
+terraform init
+
+terraform plan
+
+terraform apply
+
+terraform destroy
+
+terraform state list
+
+
+
+
+
+*****************************************************************************************
+
+
+
+
+Install Terraform --> Local Windows Machine!!!
+
+Use Command prompt to run Terraform commands like : terraform init, terraform plan, terraform apply, etc..
+
+Create the Config file ?
+
+Visual Studio Code  to create or develop Terraform Config files! i.e., *.tf files 
+
+
+
+
+
+
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = "ANKXU"
+  secret_key = "GrU2F96"
+}
+
+# Create VPC
+
+resource "aws_vpc" "myvpc8" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
+
+  tags = {
+    Name = "myvpc8"
+  }
+}
+
+# Create Subnet 
+
+resource "aws_subnet" "mysubnet8" {
+  vpc_id     = aws_vpc.myvpc8.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "mysubnet8"
+  }
+}
+
+# Internet Gateway
+
+resource "aws_internet_gateway" "mygw8" {
+  vpc_id = aws_vpc.myvpc8.id
+
+  tags = {
+    Name = "mygw8"
+  }
+}
+
+# Route Table
+
+resource "aws_route_table" "myrt8" {
+  vpc_id = aws_vpc.myvpc8.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.mygw8.id
+  }
+
+  tags = {
+    Name = "myrt8"
+  }
+}
+
+# Route Table Association
+
+resource "aws_route_table_association" "myrta8" {
+  subnet_id      = aws_subnet.mysubnet8.id
+  route_table_id = aws_route_table.myrt8.id
+}
+
+# Security Groups
+
+resource "aws_security_group" "mysg8" {
+  name        = "mysg8"
+  description = "Allow inbound traffic"
+  vpc_id      = aws_vpc.myvpc8.id
+
+  ingress {
+    description      = "HTTP"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description      = "SSH"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags = {
+    Name = "mysg8"
+  }
+}
+
+# Create Instance
+
+resource "aws_instance" "App_server2" {
+  ami           = "ami-09f7fbc41963e146f"
+  instance_type = "t2.micro"
+  associate_public_ip_address = true
+  subnet_id = aws_subnet.mysubnet8.id
+  vpc_security_group_ids = [aws_security_group.mysg8.id]
+  key_name = "loksaieta123"
+
+  tags = {
+    Name = "Terraform-App_Server8"
+  }
+}
+
+
+
+
+
