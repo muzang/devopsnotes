@@ -1,0 +1,2 @@
+14:32:55	 From  DevOps Cloud camp : devopscloudcamp/percent_calc:v2  port 80  --> 8081devopscloudcamp/forumapp:v2
+14:33:08	 From  DevOps Cloud camp : sudo docker run -dit --name Forum -p 8082:80 devopscloudcamp/foru
