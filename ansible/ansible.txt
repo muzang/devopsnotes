@@ -1,0 +1,37 @@
+Making env
+$ sudo apt-get update 
+$ sudo apt-get install software-properties-common 
+$ sudo apt-add-repository ppa:ansible/ansible
+ $ sudo apt-get update 
+$ sudo apt-get install ansible
+
+command structure
+ansible <group> -i <inventory file> --command
+
+ansible webservers -i inventory --list-hosts
+
+ansible <group> -i <inventory file> -m <module>
+ansible webservers -i inventory -m ping
+
+https://blog.ssdnodes.com/blog/step-by-step-ansible-guide/
+
+listing all Hosts
+ansible all --list-host
+
+Ping all hosts with user
+ansible all -m ping -u USER
+
+/etc/ansible/hosts   for hosts
+/etc/ansible/ansible.cfg  for Inventry parameters
+
+Adding Host
+create keygen
+ssh-copy-id ubuntu@3.83.241.30  to remote host
+change password authentication yes
+service ssh restart
+ssh-copy-id ubuntu@3.83.241.30
+install python on both ends
+
+ansible webservers --inventory=52.23.227.160 -m ping --extra-vars "ansible_user=ubuntu ansible_password=ubuntu"
+
+

@@ -1,0 +1,52 @@
+create role
+-------------
+# ansible-galaxy init <rolename>
+# ansible-galaxy init apache
+-----------------------------------------------
+check the tree in roles
+-----------------------
+tree <role name>
+
+tree apache
+
+apache/
+├── README.md
+├── defaults
+│   └── main.yml
+├── files
+├── handlers
+│   └── main.yml
+├── meta
+│   └── main.yml
+├── tasks
+│   ├── instll.yml
+│   └── main.yml
+├── templates
+├── tests
+│   ├── inventory
+│   └── test.yml
+└── vars
+    └── main.yml
+
+
+-----------------------------------------------------
+
+go to tasks in role
+
+in tasks/main.yml  --> add the list of taske here
+-----------------------------------------
+- name: Install web server
+  ansible.builtin.apt:
+    name: "apache2"
+    state: present
+------------------------------------------
+call this role in playbook
+
+- hosts: ansible
+  become: yes
+  become_user: root
+  tasks:
+    - name: Install Web Server
+      include_role:
+        name: apache
+-------------------------------------------------

@@ -1,0 +1,29 @@
+- hosts: [webservers]
+  become: yes
+  become_user: root
+  tasks:
+    - name: install apache2
+      apt: name=apache2 update_cache=yes state=latest
+
+------------
+
+- hosts: [webservers]
+  become: yes
+  become_user: root
+  tasks:
+    - name: Start Apache2
+      command: service apache2 start
+--------------------------------------
+
+- hosts: [webservers]
+  become: yes
+  become_user: root
+  tasks:
+    - copy:
+        content: |
+                 This is some
+                 not too complex
+                 cotent for a file
+        dest: content.txt
+------------------------------------------------
+
