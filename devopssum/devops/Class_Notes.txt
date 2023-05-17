@@ -1,0 +1,363 @@
+DCP - 13th Mar. 2023 7AM - 9AM IST
+	
+#######
+DAY-1
+#######
+
+	Introduction to DevOps!
+	
+	DevOps!!!!		Is a software development strategies 
+
+		Applications ::
+			Desktop Applications	--> Create a billing system for retail shop
+			Web Applications
+			Mobile Applications
+	
+	SDLC ??? Software Development LifeCycle ???
+	
+	Requirement Analysis 
+	Design Documents
+	Development/Coding
+	Testing 
+	Deployed to Prod.
+	Monitor...
+	
+	Waterfall Model -- Linear in fashion.  Create a billing system for retail shop  6month
+	
+		1.Requirement Analysis 
+		2.Design Documents
+		3.Development/Coding
+		Testing 
+		Deployed to Prod.
+		Monitor...
+	
+	Complete Application :
+		Monolith Application Architecture --> Tightly coupled.
+
+Module 1: developed --> Unit level testing ==> Integrated to Higher Environments ==> Finally Released to Production
+
+Module 2: developed --> Unit level testing ==> Integrated to Higher Environments ==> Finally Released to Production
+
+
+Create a New Change Request1 :
+
+		Requirement Analysis 
+		Design Documents
+		Development/Coding
+		Testing 
+		Deployed to Prod.
+		Monitor...
+		
+Create a New Change Request2 :
+
+		Requirement Analysis 
+		Design Documents
+		Development/Coding
+		Testing 
+		Deployed to Prod.
+		Monitor...
+		
+Agile Methodologies!
+
+	Application ::: Modules --> Iterations.
+	
+Create Module/Iteration1 :
+
+		Requirement Analysis 
+		Design Documents
+		Development/Coding
+		Testing 
+		Deployed to Prod.
+		Monitor...
+		
+Create Module/Iteration2 :
+
+		Requirement Analysis 
+		Design Documents
+		Development/Coding
+		Testing 
+		Deployed to Prod.
+		Monitor...
+
+Create Module/Iteration3 :
+
+		Requirement Analysis 
+		Design Documents
+		Development/Coding
+		Testing 
+		Deployed to Prod.
+		Monitor...
+	
+Create Module/Iteration4 :
+
+		Requirement Analysis 
+		Design Documents
+		Development/Coding
+		Testing 
+		Deployed to Prod.
+		Monitor...
+		
+	Independently develop and Test the changes ===> 
+	
+	Continuous Integration  --> Continuous Delivery 
+	
+
+Who are all involved in the process :::
+
+	- Developers
+	- Tester
+	- Business Analyst
+	- Quality Team
+	- Security Team
+	- Deployment Team 
+	
+	
+	- Business Analyst 
+	- App/Dev Team - Appln. Owner/Leads/Architect
+		Developers 
+	- Testing Team 					How much time they take to complete the testing ???
+	- Production Support Team
+	- Monitoring Team 
+	- Release Management Team 
+	- Security Team 
+	
+	Non-Prod Environment							PROD Environment
+	
+		Dev (Developer) 
+		Test (Testing Team)
+			QA
+			UAT
+			Pre-Prod / Staging			===>			Prod
+	
+	On-Premises				<cloud Adoption>		 Cloud Environment
+	
+		Application Modernization
+		Legacy Modernization
+	
+
+DevOps :: 
+
+	Continuous Integration  --> Continuous Delivery --> Continuous Deployment
+	
+	DevOps Team ---> 
+
+	Environment							
+	
+		Dev (Developer) 		Java web application 	--> build(Compile and create artifacts(binaries- *.war/*.jar) 
+														--> Perform Unit Testing 
+														--> promote the code to testing Team
+		Test (Testing Team)
+			QA
+			UAT			User Acceptance Testing -->> Validate --> Business Users
+			Pre-Prod / Staging		
+		( )	
+		Prod 
+	
+	
+	
+DevOps Stages :::
+
+	Continuous Development 		--> Tools -- IDE - Eclipse based IDEs / VS Code -- Integrate the code
+	Continuous Integration		--> promote the code to testing Team
+	Continuous Testing			--> Automated testing & notifications 
+	Continuous Delivery/Deployment -->
+			Delivery 	--> Expects Manual Approval before PROD Release
+			Deployment 	--> No need for any Manual Approvals before prod release
+	Continuous Monitoring 
+	
+	Non-Prod				<<<<<<----->>>>>> 	PROD
+	
+	Identify all the possible issues at the very early stage and fix it.
+	
+	
+Security ::
+
+	DevSecOps
+	
+Application ::
+
+Banking!!!!
+
+	On-Banking! 
+	
+		Downtime -- Production Deployment Window --> 4 - 6hrs. 
+		
+Online - E-Commerce  / Facebook 
+
+
+	Monolith Application Architecture ::
+		Modules/Task/Iteration
+	
+	Micro-Service Based Application Architecture :::
+		Services
+	
+www.amazon.com 
+
+	Sign-up		-- Micro-Service1 - Developer1 - create, test, integrate to QA/UAT --> Release to PROD
+	Sign-in 	-- Micro-Service2 - Developer2 - create, test, integrate to QA/UAT --> Release to PROD
+	Search		-- Micro-Service3 - Developer3 - create, test, integrate to QA/UAT --> Release to PROD
+	Add to Cart 
+	Place the order 
+	payment 
+	confirm
+	tracking 
+	
+Next :
+	Create AWS Account 
+	Access to Lab 
+	
+	
+#######
+DAY-2
+#######
+		Various DevOps Tools & its features.
+		Access the Lab, Class Notes
+		AWS - Free tier account 
+			Create EC2 Instances ....
+			
+		DevOps is all about : 
+		
+			People		
+			Process
+			Tools 
+
+Telecomm ::
+
+	Service Provider1 --> introduce a new offer --> DEV, OPS --> Customers ASAP
+	Service Provider2 -->>>
+	
+		Detailed Assessment ::
+		Assessment Report & Recommendations!
+		Implementation 
+		
+	- Developers
+	- Tester
+	- Business Analyst
+	- Quality Team
+	- Security Team
+	- Deployment Team 
+	
+	
+	- Business Analyst 
+	- App/Dev Team - Appln. Owner/Leads/Architect
+		Developers 
+	- Testing Team 					How much time they take to complete the testing ???
+	- Production Support Team
+	- Monitoring Team 
+	- Release Management Team 
+	- Security Team 
+	
+	
+	DevOps ---> DevSecOps ---> SRE --> GITOps ---> AIOps 
+	
+	Continuous Development 		--> Tools -- IDE - Eclipse based IDEs / VS Code -- Integrate the code
+	Continuous Integration		--> promote the code to testing Team
+	Continuous Testing			--> Automated testing & notifications 
+	Continuous Delivery/Deployment -->
+			Delivery 	--> Expects Manual Approval before PROD Release
+			Deployment 	--> No need for any Manual Approvals before prod release
+	Continuous Monitoring 
+
+
+		Continuous Improvement!!!!!
+	
+
+	Tools ::::
+	
+		AWS 
+		
+		AZ 
+	
+	
+	Plan ::: ALM Tools - Application LifeCycle Management Tools 
+		JIRA
+		AZ Board
+	
+	Code ::: 	Eclipse Based IDE, GIT Development Team ==> JAVA, Python, NodeJS, Angualar, .Net 
+				Visual Studio Code
+					shell Scripts, Groovy, Python, yaml scripts 
+					
+				Python Scripting ==> AWS ==> AWS CLI ,, AZ 
+	
+	Build ::: Jenkins -->
+	
+	Monitor :: Prometheus & Grafana 
+	
+		Application Monitoring 					==> AppDynamics
+		Infra-Structure Monitoring 	Memory,CPU, ==> Prometheus & Grafana 
+	
+	
+	Infra-Pipeline :
+	Automate Infra Provisioning ---> Configure the server 
+	
+	
+	Build & Test 
+	
+	Pipeline ::
+	
+		Build ---> Infra-pipeline ---> Test 
+		
+		
+				Build ---> Automate Infra Provisioning ---> Configure the server  ---> Test
+				
+	Create any automation script / Pipeline : --> It shd be generic and reusable.
+	
+	
+	Jenkins --> Build Orchestration Tool 
+	
+	Kubernetes --> Container Orchestration Tool
+	
+	Java Application --> MAVEN/ANT/GRADLE - Build Tools 
+	
+
+		
+	Java Appln. 
+	
+	Retails :::
+	
+	On-Premises  	===> 	Cloud 
+	
+	Migration1
+	
+	DevOps Implementation
+		Assessment !
+			Team
+			Create policies/Stragies 
+			Tools 
+		DevOps Team ::
+			GIT 			2 resources Repo Mgmt 
+			Jenkins 
+			Ansible
+			Docker/Kubernetes
+		Onboard the Applications to DevOps 
+			PoC Appln. 
+			VersionOne,JIRA,AzBoard
+			
+		Onboard -- Appln.
+		
+			DEV --> Test Release
+		
+		CICD Pipeline :
+		
+			Build -- create artifacts 
+			deploy the appln. to test envi.
+			automated testing 
+			feedback will be sent to the users 
+			Dployed to prod .
+			
+		JIRA --> 
+	
+		Cloud Adoption ::: 
+	
+
+	
+		Access the Lab, Class Notes
+		AWS - Free tier account 
+		Create EC2 Instances ....
+		
+		
+	Today :::
+	
+		-> Create Github Account 		- Remote Repository to maintain the files and folders 
+		-> Create AWS Free Tier Account 
+		
